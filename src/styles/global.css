@@ -1,0 +1,229 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* Import fonts */
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap');
+
+  html {
+    @apply scroll-smooth;
+    font-size: 16px;
+  }
+
+  /* iPad and larger */
+  @screen md {
+    html {
+      font-size: 17px;
+    }
+  }
+
+  /* Desktop */
+  @screen lg {
+    html {
+      font-size: 18px;
+    }
+  }
+
+  /* Light mode (default) */
+  body {
+    @apply bg-white text-synthesis-600 antialiased;
+    font-family: "Inter", system-ui, -apple-system, sans-serif;
+    font-feature-settings: "cv11", "ss01";
+  }
+
+  /* Dark mode */
+  html.dark body {
+    @apply bg-synthesis-950 text-synthesis-400;
+  }
+
+  /* Selection styling */
+  ::selection {
+    @apply bg-accent-500/20 text-synthesis-900;
+  }
+
+  html.dark ::selection {
+    @apply bg-accent-500/30 text-synthesis-100;
+  }
+
+  :target {
+    scroll-margin-top: 5rem;
+  }
+}
+
+@layer components {
+  /* Typography - responsive sizes */
+  .heading-1 {
+    @apply text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold text-synthesis-900 tracking-tight leading-[1.1];
+  }
+
+  .heading-2 {
+    @apply text-2xl sm:text-3xl md:text-4xl font-semibold text-synthesis-900 tracking-tight leading-tight;
+  }
+
+  .heading-3 {
+    @apply text-xl md:text-2xl font-semibold text-synthesis-800 tracking-tight;
+  }
+
+  .heading-4 {
+    @apply text-lg md:text-xl font-medium text-synthesis-800;
+  }
+
+  .body-large {
+    @apply text-base sm:text-lg md:text-xl text-synthesis-600 leading-relaxed;
+  }
+
+  .body {
+    @apply text-base md:text-lg text-synthesis-600 leading-relaxed;
+  }
+
+  /* Dark mode typography */
+  html.dark .heading-1,
+  html.dark .heading-2 {
+    @apply text-synthesis-100;
+  }
+
+  html.dark .heading-3,
+  html.dark .heading-4 {
+    @apply text-synthesis-200;
+  }
+
+  html.dark .body-large,
+  html.dark .body {
+    @apply text-synthesis-400;
+  }
+
+  /* Links */
+  .link {
+    @apply text-accent-600 hover:text-accent-500 transition-colors duration-150 underline underline-offset-2 decoration-accent-500/30 hover:decoration-accent-500;
+  }
+
+  html.dark .link {
+    @apply text-accent-400 hover:text-accent-300 decoration-accent-400/30 hover:decoration-accent-300;
+  }
+
+  /* Cards - responsive padding */
+  .card {
+    @apply bg-synthesis-50/50 border border-synthesis-200 rounded-xl p-4 sm:p-5 md:p-6;
+  }
+
+  .card-hover {
+    @apply card hover:border-synthesis-300 hover:bg-synthesis-50 transition-all duration-200;
+  }
+
+  html.dark .card {
+    @apply bg-synthesis-900/30 border-synthesis-800;
+  }
+
+  html.dark .card-hover {
+    @apply hover:border-synthesis-700 hover:bg-synthesis-900/50;
+  }
+
+  /* Gradient text */
+  .gradient-text {
+    @apply bg-gradient-to-r from-accent-600 to-accent-500 bg-clip-text text-transparent;
+  }
+
+  html.dark .gradient-text {
+    @apply from-accent-400 to-accent-300;
+  }
+
+  /* Section spacing - responsive */
+  .section {
+    @apply py-10 sm:py-12 md:py-16 lg:py-20;
+  }
+
+  .section-narrow {
+    @apply py-8 sm:py-10 md:py-12;
+  }
+
+  /* Containers - more breathing room on mobile/tablet */
+  .container-narrow {
+    @apply max-w-4xl mx-auto px-5 sm:px-6 md:px-8 lg:px-6;
+  }
+
+  .container-wide {
+    @apply max-w-7xl mx-auto px-5 sm:px-6 md:px-8 lg:px-6;
+  }
+
+  /* Layer boxes */
+  .layer-box {
+    @apply border border-synthesis-200 bg-white rounded-lg p-4 transition-all duration-200;
+  }
+
+  .layer-box:hover {
+    @apply border-synthesis-300 bg-synthesis-50/50;
+  }
+
+  html.dark .layer-box {
+    @apply border-synthesis-800 bg-synthesis-900/20;
+  }
+
+  html.dark .layer-box:hover {
+    @apply border-synthesis-700 bg-synthesis-900/40;
+  }
+
+  .layer-3 { @apply border-l-4 border-l-violet-500; }
+  .layer-2 { @apply border-l-4 border-l-accent-500; }
+  .layer-1 { @apply border-l-4 border-l-emerald-500; }
+}
+
+@layer utilities {
+  .fade-section {
+    @apply opacity-0 translate-y-4 transition-all duration-500 ease-out;
+  }
+
+  .fade-section.visible {
+    @apply opacity-100 translate-y-0;
+  }
+
+  hr {
+    @apply border-synthesis-200 my-6 sm:my-8 md:my-10;
+  }
+
+  html.dark hr {
+    @apply border-synthesis-850;
+  }
+
+  pre {
+    @apply bg-synthesis-50 border border-synthesis-200 rounded-lg p-3 sm:p-4 overflow-x-auto text-sm md:text-base;
+    font-family: "JetBrains Mono", monospace;
+  }
+
+  html.dark pre {
+    @apply bg-synthesis-900 border-synthesis-800;
+  }
+
+  code {
+    font-family: "JetBrains Mono", monospace;
+    @apply text-sm md:text-base;
+  }
+
+  :not(pre) > code {
+    @apply bg-synthesis-100 px-1 py-0.5 rounded text-accent-600 text-sm;
+  }
+
+  html.dark :not(pre) > code {
+    @apply bg-synthesis-800 text-accent-400;
+  }
+
+  /* Responsive tables */
+  .table-wrapper {
+    @apply overflow-x-auto -mx-5 px-5 sm:mx-0 sm:px-0;
+  }
+
+  table { @apply w-full text-left text-sm sm:text-base min-w-[500px] sm:min-w-0; }
+  th { @apply text-synthesis-700 font-medium pb-2 border-b border-synthesis-200 pr-4; }
+  td { @apply py-2 border-b border-synthesis-100 pr-4; }
+  html.dark th { @apply text-synthesis-300 border-synthesis-800; }
+  html.dark td { @apply border-synthesis-850; }
+
+  blockquote {
+    @apply border-l-2 border-accent-500 pl-4 text-synthesis-700;
+  }
+
+  html.dark blockquote {
+    @apply text-synthesis-300;
+  }
+}

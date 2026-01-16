@@ -1,0 +1,205 @@
+---
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = "A Cognitive Commons Architecture for Human-AI Collaboration" } = Astro.props;
+const currentPath = Astro.url.pathname;
+
+const navLinks = [
+  { href: '/', label: 'Home' },
+  { href: '/vision', label: 'Vision' },
+  { href: '/how-it-works', label: 'How It Works' },
+  { href: '/economics', label: 'Economics' },
+  { href: '/node', label: 'Node' },
+];
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <title>{title} | Synthesis</title>
+    
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    
+    <meta property="og:title" content={`${title} | Synthesis`} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    
+    <script is:inline>
+      const theme = localStorage.getItem('theme') || 'light';
+      if (theme === 'dark') {
+        document.documentElement.classList.add('dark');
+      }
+    </script>
+  </head>
+  
+  <body class="min-h-screen">
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-white/90 dark:bg-synthesis-950/90 backdrop-blur-md border-b border-synthesis-100 dark:border-synthesis-900">
+      <div class="container-wide">
+        <div class="flex items-center justify-between h-14 sm:h-16">
+          <!-- Logo -->
+          <a href="/" class="flex items-center gap-2 sm:gap-2.5 group">
+            <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-md bg-gradient-to-br from-accent-500 to-accent-600 flex items-center justify-center">
+              <span class="text-white font-semibold text-sm sm:text-base">S</span>
+            </div>
+            <span class="font-medium text-base sm:text-lg text-synthesis-800 dark:text-synthesis-200 group-hover:text-synthesis-950 dark:group-hover:text-synthesis-50 transition-colors">
+              Synthesis
+            </span>
+          </a>
+          
+          <!-- Desktop Nav -->
+          <div class="hidden md:flex items-center gap-1">
+            {navLinks.map(link => (
+              <a 
+                href={link.href}
+                class:list={[
+                  "px-3 lg:px-4 py-2 rounded-md text-sm lg:text-base font-medium transition-colors",
+                  currentPath === link.href 
+                    ? "text-synthesis-900 dark:text-synthesis-100 bg-synthesis-100 dark:bg-synthesis-800" 
+                    : "text-synthesis-600 dark:text-synthesis-400 hover:text-synthesis-900 dark:hover:text-synthesis-200 hover:bg-synthesis-50 dark:hover:bg-synthesis-900"
+                ]}
+              >
+                {link.label}
+              </a>
+            ))}
+            
+            <div class="w-px h-5 bg-synthesis-200 dark:bg-synthesis-800 mx-2"></div>
+            
+            <!-- Theme Toggle -->
+            <button 
+              id="theme-toggle"
+              class="p-2 rounded-md text-synthesis-500 dark:text-synthesis-400 hover:text-synthesis-700 dark:hover:text-synthesis-200 hover:bg-synthesis-100 dark:hover:bg-synthesis-800 transition-colors"
+              aria-label="Toggle theme"
+            >
+              <svg class="w-5 h-5 hidden dark:block" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+              </svg>
+              <svg class="w-5 h-5 block dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+              </svg>
+            </button>
+          </div>
+          
+          <!-- Mobile controls -->
+          <div class="flex items-center gap-1 md:hidden">
+            <button 
+              id="theme-toggle-mobile"
+              class="p-2.5 text-synthesis-500 dark:text-synthesis-400"
+              aria-label="Toggle theme"
+            >
+              <svg class="w-5 h-5 hidden dark:block" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+              </svg>
+              <svg class="w-5 h-5 block dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+              </svg>
+            </button>
+            
+            <button 
+              id="mobile-menu-btn"
+              class="p-2.5 text-synthesis-500 dark:text-synthesis-400"
+              aria-label="Toggle menu"
+            >
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Mobile menu -->
+      <div id="mobile-menu" class="hidden md:hidden border-t border-synthesis-100 dark:border-synthesis-900 bg-white/95 dark:bg-synthesis-950/95 backdrop-blur-md">
+        <div class="container-wide py-4 flex flex-col gap-1">
+          {navLinks.map(link => (
+            <a 
+              href={link.href}
+              class:list={[
+                "px-4 py-3 rounded-lg text-base font-medium transition-colors",
+                currentPath === link.href 
+                  ? "text-synthesis-900 dark:text-synthesis-100 bg-synthesis-100 dark:bg-synthesis-800" 
+                  : "text-synthesis-600 dark:text-synthesis-400 active:bg-synthesis-50 dark:active:bg-synthesis-900"
+              ]}
+            >
+              {link.label}
+            </a>
+          ))}
+        </div>
+      </div>
+    </nav>
+    
+    <!-- Main content -->
+    <main class="pt-14 sm:pt-16">
+      <slot />
+    </main>
+    
+    <!-- Footer -->
+    <footer class="border-t border-synthesis-100 dark:border-synthesis-900 mt-12 sm:mt-16">
+      <div class="container-wide py-8 sm:py-10">
+        <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-6 sm:gap-4">
+          <div class="flex items-center gap-2.5">
+            <div class="w-7 h-7 rounded bg-gradient-to-br from-accent-500 to-accent-600 flex items-center justify-center">
+              <span class="text-white font-semibold text-xs">S</span>
+            </div>
+            <span class="text-sm sm:text-base text-synthesis-500">
+              Synthesis · amotivv, inc.
+            </span>
+          </div>
+          
+          <div class="flex flex-wrap gap-4 sm:gap-6 text-sm sm:text-base text-synthesis-500">
+            {navLinks.slice(1).map(link => (
+              <a href={link.href} class="hover:text-synthesis-700 dark:hover:text-synthesis-300 transition-colors">
+                {link.label}
+              </a>
+            ))}
+          </div>
+        </div>
+      </div>
+    </footer>
+    
+    <script>
+      document.getElementById('mobile-menu-btn')?.addEventListener('click', () => {
+        document.getElementById('mobile-menu')?.classList.toggle('hidden');
+      });
+    </script>
+    
+    <script>
+      function toggleTheme() {
+        const html = document.documentElement;
+        if (html.classList.contains('dark')) {
+          html.classList.remove('dark');
+          localStorage.setItem('theme', 'light');
+        } else {
+          html.classList.add('dark');
+          localStorage.setItem('theme', 'dark');
+        }
+      }
+      document.getElementById('theme-toggle')?.addEventListener('click', toggleTheme);
+      document.getElementById('theme-toggle-mobile')?.addEventListener('click', toggleTheme);
+    </script>
+    
+    <script>
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, { threshold: 0.1 });
+      document.querySelectorAll('.fade-section').forEach(el => observer.observe(el));
+    </script>
+  </body>
+</html>
+
+<style is:global>
+  @import '../styles/global.css';
+</style>
