@@ -7,7 +7,7 @@ export default defineConfig({
     tailwind(),
     sitemap()
   ],
-  site: 'https://synthesis.site',
+  site: 'https://synthesis.amotivv.ai',
   vite: {
     server: {
       allowedHosts: ['fork-node-01-1.tail855f01.ts.net', 'localhost']
