@@ -1,9 +1,13 @@
 import { defineConfig } from 'astro/config';
 import tailwind from '@astrojs/tailwind';
+import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
-  integrations: [tailwind()],
-  site: 'https://synthesis.site', // Update with actual domain
+  integrations: [
+    tailwind(),
+    sitemap()
+  ],
+  site: 'https://synthesis.site',
   vite: {
     server: {
       allowedHosts: ['fork-node-01-1.tail855f01.ts.net', 'localhost']
