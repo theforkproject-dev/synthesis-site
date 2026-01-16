@@ -46,33 +46,26 @@ const navLinks = [
     <nav class="fixed top-0 left-0 right-0 z-50 bg-white/90 dark:bg-synthesis-950/90 backdrop-blur-md border-b border-synthesis-100 dark:border-synthesis-900">
       <div class="container-wide">
         <div class="flex items-center justify-between h-14 sm:h-16">
-          <!-- Logo -->
-          <a href="/" class="flex items-center gap-2 sm:gap-2.5 group">
-            <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-md bg-gradient-to-br from-accent-500 to-accent-600 flex items-center justify-center">
-              <span class="text-white font-semibold text-sm sm:text-base">S</span>
-            </div>
-            <span class="font-medium text-base sm:text-lg text-synthesis-800 dark:text-synthesis-200 group-hover:text-synthesis-950 dark:group-hover:text-synthesis-50 transition-colors">
-              Synthesis
-            </span>
+          <!-- Logo - text style with dot -->
+          <a href="/" class="group">
+            <span class="text-xl sm:text-2xl font-semibold tracking-tight text-synthesis-900 dark:text-synthesis-100 group-hover:text-synthesis-700 dark:group-hover:text-synthesis-300 transition-colors">synthesis<span class="text-amber-500">.</span></span>
           </a>
           
           <!-- Desktop Nav -->
-          <div class="hidden md:flex items-center gap-1">
+          <div class="hidden md:flex items-center gap-6 lg:gap-8">
             {navLinks.map(link => (
               <a 
                 href={link.href}
                 class:list={[
-                  "px-3 lg:px-4 py-2 rounded-md text-sm lg:text-base font-medium transition-colors",
+                  "text-sm lg:text-base font-medium transition-colors",
                   currentPath === link.href 
-                    ? "text-synthesis-900 dark:text-synthesis-100 bg-synthesis-100 dark:bg-synthesis-800" 
-                    : "text-synthesis-600 dark:text-synthesis-400 hover:text-synthesis-900 dark:hover:text-synthesis-200 hover:bg-synthesis-50 dark:hover:bg-synthesis-900"
+                    ? "text-amber-500" 
+                    : "text-synthesis-600 dark:text-synthesis-400 hover:text-synthesis-900 dark:hover:text-synthesis-200"
                 ]}
               >
                 {link.label}
               </a>
             ))}
-            
-            <div class="w-px h-5 bg-synthesis-200 dark:bg-synthesis-800 mx-2"></div>
             
             <!-- Theme Toggle -->
             <button 
@@ -126,7 +119,7 @@ const navLinks = [
               class:list={[
                 "px-4 py-3 rounded-lg text-base font-medium transition-colors",
                 currentPath === link.href 
-                  ? "text-synthesis-900 dark:text-synthesis-100 bg-synthesis-100 dark:bg-synthesis-800" 
+                  ? "text-amber-500 bg-amber-50 dark:bg-amber-900/20" 
                   : "text-synthesis-600 dark:text-synthesis-400 active:bg-synthesis-50 dark:active:bg-synthesis-900"
               ]}
             >
@@ -146,12 +139,10 @@ const navLinks = [
     <footer class="border-t border-synthesis-100 dark:border-synthesis-900 mt-12 sm:mt-16">
       <div class="container-wide py-8 sm:py-10">
         <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-6 sm:gap-4">
-          <div class="flex items-center gap-2.5">
-            <div class="w-7 h-7 rounded bg-gradient-to-br from-accent-500 to-accent-600 flex items-center justify-center">
-              <span class="text-white font-semibold text-xs">S</span>
-            </div>
-            <span class="text-sm sm:text-base text-synthesis-500">
-              Synthesis · amotivv, inc.
+          <div class="flex items-center gap-2">
+            <span class="text-lg font-semibold tracking-tight text-synthesis-700 dark:text-synthesis-300">synthesis<span class="text-amber-500">.</span></span>
+            <span class="text-sm sm:text-base text-synthesis-400">
+              · amotivv, inc.
             </span>
           </div>
           
