@@ -51,7 +51,8 @@
 @layer components {
   /* Typography - responsive sizes */
   .heading-1 {
-    @apply text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold text-synthesis-900 tracking-tight leading-[1.15];
+    @apply text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold text-synthesis-900 tracking-tight;
+    line-height: 1.2;
   }
 
   .heading-2 {
@@ -116,17 +117,13 @@
     @apply hover:border-synthesis-700 hover:bg-synthesis-900/50;
   }
 
-  /* Gradient text - inline-block with overflow visible */
+  /* Gradient text - use color instead of background-clip to avoid clipping */
   .gradient-text {
-    @apply bg-gradient-to-r from-accent-600 to-accent-500 text-transparent inline;
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-box-decoration-break: clone;
-    box-decoration-break: clone;
+    color: #f59e0b;
   }
 
   html.dark .gradient-text {
-    @apply from-accent-400 to-accent-300;
+    color: #fbbf24;
   }
 
   /* Section spacing - responsive */
