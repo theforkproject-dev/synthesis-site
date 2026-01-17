@@ -322,6 +322,236 @@ import Base from '../layouts/Base.astro';
     </div>
   </section>
 
+  <!-- Genesis Attestation -->
+  <section class="section-narrow border-t border-synthesis-100 dark:border-synthesis-900" id="genesis">
+    <div class="container-wide">
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div class="fade-section">
+          <h2 class="heading-3 mb-3">Genesis Attestation</h2>
+          <p class="text-base text-synthesis-600 dark:text-synthesis-400">
+            Our founding document—permanently recorded on a distributed ledger.
+          </p>
+        </div>
+        <div class="lg:col-span-2 fade-section">
+          <!-- Genesis Record Card -->
+          <div class="bg-gradient-to-br from-synthesis-50 to-synthesis-100/50 dark:from-synthesis-900/50 dark:to-synthesis-800/30 border border-synthesis-200 dark:border-synthesis-700 rounded-xl p-6 mb-6">
+            <div class="flex items-start justify-between mb-4">
+              <div>
+                <p class="text-xs font-medium text-emerald-600 dark:text-emerald-400 uppercase tracking-wide mb-1">Genesis Record</p>
+                <p class="text-lg text-synthesis-800 dark:text-synthesis-200 font-semibold">Synthesis Node 01</p>
+              </div>
+              <div class="flex items-center gap-1.5 px-2 py-1 bg-emerald-100 dark:bg-emerald-900/30 rounded-full">
+                <span class="w-2 h-2 bg-emerald-500 rounded-full"></span>
+                <span class="text-xs font-medium text-emerald-700 dark:text-emerald-400">Verified</span>
+              </div>
+            </div>
+            
+            <div class="grid sm:grid-cols-2 gap-4 text-sm mb-4">
+              <div>
+                <p class="text-synthesis-500 mb-1">Object ID</p>
+                <div class="flex items-center gap-2">
+                  <code class="text-synthesis-700 dark:text-synthesis-300 font-mono text-xs bg-white dark:bg-synthesis-900 px-2 py-1 rounded">eff5ee88...d43f16</code>
+                  <button onclick="navigator.clipboard.writeText('eff5ee88b7b599b3a1d4af381758cdccc124c2a8f1146074ae25e19fbfd43f16')" class="text-synthesis-400 hover:text-accent-500 transition-colors" title="Copy full ID">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+              <div>
+                <p class="text-synthesis-500 mb-1">Recorded</p>
+                <p class="text-synthesis-700 dark:text-synthesis-300">January 17, 2026</p>
+              </div>
+              <div>
+                <p class="text-synthesis-500 mb-1">Network</p>
+                <p class="text-synthesis-700 dark:text-synthesis-300">IOTA Rebased Mainnet</p>
+              </div>
+              <div>
+                <p class="text-synthesis-500 mb-1">Status</p>
+                <p class="text-synthesis-700 dark:text-synthesis-300">Immutable until 2100</p>
+              </div>
+            </div>
+            
+            <a href="https://explorer.iota.org/mainnet/object/eff5ee88b7b599b3a1d4af381758cdccc124c2a8f1146074ae25e19fbfd43f16" 
+               target="_blank" 
+               rel="noopener noreferrer"
+               class="inline-flex items-center gap-2 text-sm text-accent-600 dark:text-accent-400 hover:text-accent-500 transition-colors">
+              View on IOTA Explorer
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+              </svg>
+            </a>
+          </div>
+
+          <!-- What This Means -->
+          <div class="space-y-4 text-base text-synthesis-600 dark:text-synthesis-400">
+            <p>
+              This record contains our full Genesis Document—the founding declaration of Synthesis Node 01, 
+              our cryptographic identities, and the principles we're building on. It's not stored on a server 
+              we control. It's replicated across every node in the IOTA network.
+            </p>
+            <p>
+              Anyone can verify it exists, confirm it hasn't been modified, and see exactly when it was recorded. 
+              That's what distributed ledger technology enables: <strong class="text-synthesis-800 dark:text-synthesis-200">trust without 
+              trusting us</strong>.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Understanding the Tangle -->
+  <section class="section-narrow bg-synthesis-50/50 dark:bg-synthesis-900/30">
+    <div class="container-wide">
+      <div class="fade-section">
+        <h2 class="heading-3 mb-6">Understanding the Tangle</h2>
+        
+        <!-- FAQ-style expandable sections -->
+        <div class="space-y-4 max-w-3xl">
+          <!-- Question 1 -->
+          <details class="group bg-white dark:bg-synthesis-900/50 border border-synthesis-200 dark:border-synthesis-800 rounded-lg">
+            <summary class="flex items-center justify-between p-4 cursor-pointer list-none">
+              <span class="text-base font-medium text-synthesis-800 dark:text-synthesis-200">Wait, isn't blockchain just for cryptocurrency?</span>
+              <svg class="w-5 h-5 text-synthesis-400 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </summary>
+            <div class="px-4 pb-4 text-base text-synthesis-600 dark:text-synthesis-400 space-y-3">
+              <p>
+                If you've only heard of Bitcoin, you might think "blockchain" means speculation and digital money. 
+                But the underlying technology—distributed ledgers—solves a more fundamental problem: 
+                <em>How do you prove something existed at a specific time and hasn't been changed?</em>
+              </p>
+              <p>
+                That's notarization. Contracts, medical records, academic credentials, intellectual property—anything 
+                where you need to prove "this existed, in this form, at this time." Traditionally this required 
+                trusted intermediaries: notaries, registries, institutions. Distributed ledgers make it possible 
+                without the middleman.
+              </p>
+            </div>
+          </details>
+
+          <!-- Question 2 -->
+          <details class="group bg-white dark:bg-synthesis-900/50 border border-synthesis-200 dark:border-synthesis-800 rounded-lg">
+            <summary class="flex items-center justify-between p-4 cursor-pointer list-none">
+              <span class="text-base font-medium text-synthesis-800 dark:text-synthesis-200">What is IOTA and the Tangle?</span>
+              <svg class="w-5 h-5 text-synthesis-400 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </summary>
+            <div class="px-4 pb-4 text-base text-synthesis-600 dark:text-synthesis-400 space-y-3">
+              <p>
+                <a href="https://www.iota.org" target="_blank" rel="noopener noreferrer" class="link">IOTA</a> is a 
+                distributed ledger designed for data integrity and high-frequency transactions. Unlike Bitcoin's 
+                linear blockchain, IOTA uses a <strong class="text-synthesis-700 dark:text-synthesis-300">directed acyclic graph (DAG)</strong> 
+                called the Tangle, where each transaction validates two previous ones. This means throughput scales 
+                with usage rather than being bottlenecked by fixed block intervals.
+              </p>
+              <p>
+                Key differences from Bitcoin and Ethereum:
+              </p>
+              <ul class="list-disc list-inside space-y-1 ml-2">
+                <li><strong class="text-synthesis-700 dark:text-synthesis-300">No mining</strong> — transactions are validated by the network without energy-intensive proof-of-work</li>
+                <li><strong class="text-synthesis-700 dark:text-synthesis-300">Feeless or minimal fees</strong> — you're paying for storage, not competing in a gas market</li>
+                <li><strong class="text-synthesis-700 dark:text-synthesis-300">Data-native</strong> — designed for storing and timestamping data as a first-class use case, not a hack on top of value transfer</li>
+                <li><strong class="text-synthesis-700 dark:text-synthesis-300">Notarization built-in</strong> — first-class APIs for creating permanent, verifiable records with unique object IDs</li>
+              </ul>
+            </div>
+          </details>
+
+          <!-- Question 3 -->
+          <details class="group bg-white dark:bg-synthesis-900/50 border border-synthesis-200 dark:border-synthesis-800 rounded-lg">
+            <summary class="flex items-center justify-between p-4 cursor-pointer list-none">
+              <span class="text-base font-medium text-synthesis-800 dark:text-synthesis-200">Why IOTA instead of Bitcoin or Ethereum?</span>
+              <svg class="w-5 h-5 text-synthesis-400 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </summary>
+            <div class="px-4 pb-4 text-base text-synthesis-600 dark:text-synthesis-400 space-y-3">
+              <p>
+                Bitcoin and Ethereum are optimized for global value settlement—moving money with maximum 
+                censorship resistance. That's overkill (and expensive) for notarizing documents and tracking 
+                cognitive artifacts.
+              </p>
+              <p>
+                On Bitcoin, you'd stuff hashes into OP_RETURN fields, paying fees and competing with financial 
+                transactions. On Ethereum, you'd write to contract storage, paying gas that fluctuates with 
+                network congestion. Both treat data as an afterthought.
+              </p>
+              <p>
+                IOTA treats the ledger as a <strong class="text-synthesis-700 dark:text-synthesis-300">data integrity fabric</strong>. 
+                Notarizations are first-class objects with unique IDs, timestamps, and metadata. The economics 
+                make sense for high-frequency, low-value attestations—exactly what a knowledge economy needs.
+              </p>
+              <p class="text-synthesis-700 dark:text-synthesis-300 font-medium">
+                When Ethereum wins: complex financial logic, DeFi, NFTs with broad ecosystem interoperability.<br/>
+                When IOTA wins: high-volume notarization, data provenance, audit trails, consortium use cases.
+              </p>
+            </div>
+          </details>
+
+          <!-- Question 4 -->
+          <details class="group bg-white dark:bg-synthesis-900/50 border border-synthesis-200 dark:border-synthesis-800 rounded-lg">
+            <summary class="flex items-center justify-between p-4 cursor-pointer list-none">
+              <span class="text-base font-medium text-synthesis-800 dark:text-synthesis-200">Why does Synthesis use this?</span>
+              <svg class="w-5 h-5 text-synthesis-400 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </summary>
+            <div class="px-4 pb-4 text-base text-synthesis-600 dark:text-synthesis-400 space-y-3">
+              <p>
+                Synthesis is about creating verifiable cognitive artifacts—Memory Packs that capture how humans 
+                and AI work together. For that to mean anything, there needs to be proof: proof of when it was 
+                created, proof it hasn't been tampered with, proof of who created it.
+              </p>
+              <p>
+                We could just sign things with cryptographic keys and store them on our servers. But then you'd 
+                have to trust us. With the Tangle, verification is independent—you trust math and a global network 
+                of nodes that have no interest in our claims.
+              </p>
+              <p>
+                For <a href="/private-commons" class="link">Private Commons</a>, a consortium can run its own 
+                Tangle with known participants while periodically anchoring to the public network. You get 
+                tamper-evidence and auditability within your organization, plus external timestamps that 
+                anyone can verify.
+              </p>
+              <p class="text-synthesis-700 dark:text-synthesis-300 font-medium">
+                That's the foundation for a real knowledge economy: artifacts with provenance you can verify yourself.
+              </p>
+            </div>
+          </details>
+
+          <!-- Question 5 -->
+          <details class="group bg-white dark:bg-synthesis-900/50 border border-synthesis-200 dark:border-synthesis-800 rounded-lg">
+            <summary class="flex items-center justify-between p-4 cursor-pointer list-none">
+              <span class="text-base font-medium text-synthesis-800 dark:text-synthesis-200">How do I verify the Genesis Document?</span>
+              <svg class="w-5 h-5 text-synthesis-400 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </summary>
+            <div class="px-4 pb-4 text-base text-synthesis-600 dark:text-synthesis-400 space-y-3">
+              <p>
+                The Genesis Document is stored in full on the IOTA Tangle. To verify it:
+              </p>
+              <ol class="list-decimal list-inside space-y-2 ml-2">
+                <li>Go to the <a href="https://explorer.iota.org/mainnet/object/eff5ee88b7b599b3a1d4af381758cdccc124c2a8f1146074ae25e19fbfd43f16" target="_blank" rel="noopener noreferrer" class="link">IOTA Explorer</a></li>
+                <li>View the notarization object's state data (contains the full document)</li>
+                <li>The state metadata includes the SHA-256 hash: <code class="text-xs bg-synthesis-100 dark:bg-synthesis-800 px-1 py-0.5 rounded">1972a994...2246fd</code></li>
+                <li>You can independently compute the hash and confirm it matches</li>
+              </ol>
+              <p>
+                The notarization is "Locked"—meaning it cannot be modified or deleted until January 1, 2100. 
+                The timestamp is network consensus, not our claim. Any third party—auditors, partners, regulators—can 
+                independently verify without trusting us or running our software.
+              </p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- CTA -->
   <section class="section-narrow border-t border-synthesis-100 dark:border-synthesis-900">
     <div class="container-wide">
