@@ -81,12 +81,52 @@ import Base from '../layouts/Base.astro';
         </div>
       </div>
       
-      <div class="fade-section mt-8 pt-6 border-t border-synthesis-100 dark:border-synthesis-800">
-        <p class="text-base text-synthesis-700 dark:text-synthesis-300">
-          <strong class="text-synthesis-800 dark:text-synthesis-200">Lineage compounds:</strong> 
-          Each layer takes 80%, passes 20% upstream. A→B→C→D sold for $1000: D gets $800, C gets $160, B gets $32, A gets $8. 
-          <span class="text-synthesis-500">Foundational work generates value indefinitely.</span>
-        </p>
+      <!-- Lineage Compounds - visual breakdown -->
+      <div class="fade-section mt-10 pt-8 border-t border-synthesis-100 dark:border-synthesis-800">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+          <div>
+            <h3 class="text-base font-semibold text-synthesis-800 dark:text-synthesis-200 mb-3">Lineage Compounds</h3>
+            <p class="text-base text-synthesis-600 dark:text-synthesis-400 mb-4">
+              Each layer keeps 80%, passes 20% upstream. Foundational work generates value indefinitely.
+            </p>
+            <!-- Chain visualization -->
+            <div class="flex items-center gap-2 font-mono text-sm text-synthesis-500 mb-4">
+              <span class="text-synthesis-800 dark:text-synthesis-200">A</span>
+              <span>→</span>
+              <span class="text-synthesis-800 dark:text-synthesis-200">B</span>
+              <span>→</span>
+              <span class="text-synthesis-800 dark:text-synthesis-200">C</span>
+              <span>→</span>
+              <span class="text-synthesis-800 dark:text-synthesis-200">D</span>
+              <span class="ml-2 text-synthesis-400">sold for</span>
+              <span class="text-synthesis-800 dark:text-synthesis-200">$1,000</span>
+            </div>
+          </div>
+          
+          <!-- Breakdown grid -->
+          <div class="grid grid-cols-4 gap-4 font-mono text-sm">
+            <div class="text-center">
+              <p class="text-synthesis-500 mb-1">D</p>
+              <p class="text-emerald-600 dark:text-emerald-400 font-semibold">$800</p>
+              <p class="text-synthesis-400 text-xs">creator</p>
+            </div>
+            <div class="text-center">
+              <p class="text-synthesis-500 mb-1">C</p>
+              <p class="text-emerald-600 dark:text-emerald-400 font-semibold">$160</p>
+              <p class="text-synthesis-400 text-xs">20% of D</p>
+            </div>
+            <div class="text-center">
+              <p class="text-synthesis-500 mb-1">B</p>
+              <p class="text-emerald-600 dark:text-emerald-400 font-semibold">$32</p>
+              <p class="text-synthesis-400 text-xs">20% of C</p>
+            </div>
+            <div class="text-center">
+              <p class="text-synthesis-500 mb-1">A</p>
+              <p class="text-emerald-600 dark:text-emerald-400 font-semibold">$8</p>
+              <p class="text-synthesis-400 text-xs">foundation</p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
